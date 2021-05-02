@@ -16,7 +16,6 @@ protocol BaseRequest {
 
     var endpoint: String { get }
     var method: HTTPMethod { get }
-    var body: [String : Any] { get }
 }
 
 extension BaseRequest {

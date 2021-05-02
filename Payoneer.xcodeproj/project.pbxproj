@@ -18,6 +18,8 @@
 		3DB60FF3263ED2F900F30F04 /* PaymentMethodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DB60FF1263ED2F900F30F04 /* PaymentMethodTableViewCell.xib */; };
 		3DB60FF4263ED2F900F30F04 /* PaymentMethodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB60FF2263ED2F900F30F04 /* PaymentMethodTableViewCell.swift */; };
 		3DB60FF8263ED36500F30F04 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB60FF7263ED36500F30F04 /* UITableViewCell.swift */; };
+		3DB61001263ED56E00F30F04 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB61000263ED56E00F30F04 /* HomeViewModel.swift */; };
+		3DB61009263ED62300F30F04 /* PaymentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB61008263ED62300F30F04 /* PaymentRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		3DB60FF1263ED2F900F30F04 /* PaymentMethodTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentMethodTableViewCell.xib; sourceTree = "<group>"; };
 		3DB60FF2263ED2F900F30F04 /* PaymentMethodTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMethodTableViewCell.swift; sourceTree = "<group>"; };
 		3DB60FF7263ED36500F30F04 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
+		3DB61000263ED56E00F30F04 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		3DB61008263ED62300F30F04 /* PaymentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,12 +74,12 @@
 				3DB60FEF263ED2D300F30F04 /* Reusables */,
 				3D433308263E8F08000C70AB /* AppDelegate.swift */,
 				3D43330A263E8F08000C70AB /* SceneDelegate.swift */,
+				3DB60FE8263ED0E700F30F04 /* Network */,
 				3DB60FFC263ED48D00F30F04 /* Screens */,
 				3D43330E263E8F08000C70AB /* Main.storyboard */,
 				3D433311263E8F09000C70AB /* Assets.xcassets */,
 				3D433313263E8F09000C70AB /* LaunchScreen.storyboard */,
 				3D433316263E8F09000C70AB /* Info.plist */,
-				3DB60FE8263ED0E700F30F04 /* Network */,
 			);
 			path = Payoneer;
 			sourceTree = "<group>";
@@ -125,9 +129,19 @@
 		3DB60FFE263ED49800F30F04 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				3DB61007263ED61600F30F04 /* Requests */,
 				3D43330C263E8F08000C70AB /* HomeViewController.swift */,
+				3DB61000263ED56E00F30F04 /* HomeViewModel.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		3DB61007263ED61600F30F04 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				3DB61008263ED62300F30F04 /* PaymentRequest.swift */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +218,8 @@
 				3DB60FF4263ED2F900F30F04 /* PaymentMethodTableViewCell.swift in Sources */,
 				3DB60FEC263ED13F00F30F04 /* BaseRequest.swift in Sources */,
 				3DB60FE6263ED0E200F30F04 /* NetworkManager.swift in Sources */,
+				3DB61009263ED62300F30F04 /* PaymentRequest.swift in Sources */,
+				3DB61001263ED56E00F30F04 /* HomeViewModel.swift in Sources */,
 				3D43330D263E8F08000C70AB /* HomeViewController.swift in Sources */,
 				3D433309263E8F08000C70AB /* AppDelegate.swift in Sources */,
 				3DB60FF8263ED36500F30F04 /* UITableViewCell.swift in Sources */,
