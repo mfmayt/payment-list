@@ -17,7 +17,7 @@ class NetworkManager {
 
     private enum Constant {
 
-        static let baseURL = URL(string: "some url")
+        static let baseURL = URL(string: "https://raw.githubusercontent.com")
     }
 
     static let shared = NetworkManager(baseURL: Constant.baseURL!)
@@ -51,7 +51,6 @@ class NetworkManager {
                 }
             }
         }
-        // We can add other type of requests here
     }
 
     func processResponse<T: Codable>(data: Data?,
