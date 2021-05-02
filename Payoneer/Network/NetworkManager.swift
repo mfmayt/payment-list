@@ -17,14 +17,14 @@ class NetworkManager {
 
     private enum Constant {
 
-        static let baseURL = URL(string: "https://raw.githubusercontent.com")
+        static let baseURL = "https://raw.githubusercontent.com"
     }
 
-    static let shared = NetworkManager(baseURL: Constant.baseURL!)
+    static let shared = NetworkManager(baseURL: Constant.baseURL)
 
-    let baseURL: URL
+    let baseURL: String
 
-    private init(baseURL: URL) {
+    private init(baseURL: String) {
         self.baseURL = baseURL
     }
 
@@ -39,7 +39,7 @@ class NetworkManager {
         task.resume()
     }
 
-    func handleRequest<T: Codable>(_ request: BaseRequest,
+    func handleRequest<T: Decodable>(_ request: BaseRequest,
                                      model: T.Type,
                                      completion: @escaping (Result<T, Error>) -> (Void)) {
 
@@ -53,9 +53,9 @@ class NetworkManager {
         }
     }
 
-    func processResponse<T: Codable>(data: Data?,
-                                     error: Error?,
-                                     completion: @escaping (Result<T, Error>) -> (Void)) {
+    func processResponse<T: Decodable>(data: Data?,
+                                       error: Error?,
+                                       completion: @escaping (Result<T, Error>) -> (Void)) {
         if let err = error {
             return completion(.failure(err))
         }
@@ -72,19 +72,7 @@ class NetworkManager {
     }
 
     func getRESTURL(with endpoint: String)-> String {
-        return "\(getPlist(withName: "MediaAPIBaseURL"))/\(endpoint)"
-    }
-}
 
-// MARK: - Private Helpers
-
-private extension NetworkManager {
-
-    func getMediaURL(with endpoint: String)-> String {
-        return "\(getPlist(withName: "MediaAPIBaseURL"))/\(endpoint)"
-    }
-
-    func getPlist(withName name: String) -> String {
-        return Bundle.main.object(forInfoDictionaryKey: name) as? String ?? ""
+        return "\(baseURL)/\(endpoint)"
     }
 }

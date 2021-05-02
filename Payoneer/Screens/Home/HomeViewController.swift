@@ -11,9 +11,13 @@ class HomeViewController: UIViewController {
 
     @IBOutlet private weak var tableView: UITableView!
 
+    private let viewModel = HomeViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
         configureTableView()
+        fetchData()
     }
 }
 
@@ -25,6 +29,10 @@ private extension HomeViewController {
         tableView.register(UINib(nibName: "PaymentMethodTableViewCell", bundle: nil),
                            forCellReuseIdentifier: PaymentMethodTableViewCell.reuseIdentifier)
         tableView.dataSource = self
+    }
+
+    func fetchData() {
+        viewModel.fetchPaymentData()
     }
 }
 
