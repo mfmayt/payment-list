@@ -13,7 +13,15 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        configureTableView()
+    }
+}
+
+private extension ViewController {
+
+    func configureTableView() {
+        tableView.register(UINib(nibName: "PaymentMethodTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: PaymentMethodTableViewCell.reuseIdentifier)
     }
 }
 
