@@ -24,7 +24,19 @@
 		3DB61016263ED9FC00F30F04 /* PaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB61015263ED9FC00F30F04 /* PaymentResponse.swift */; };
 		3DB6101A263EE1B600F30F04 /* PaymentMethodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DB61019263EE1B600F30F04 /* PaymentMethodTableViewCell.xib */; };
 		3DB6101D263EE4EF00F30F04 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6101C263EE4EF00F30F04 /* UIImageView.swift */; };
+		3DB61028263F4C9000F30F04 /* PayoneerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB61027263F4C9000F30F04 /* PayoneerTests.swift */; };
+		3DB61032263F4EB400F30F04 /* MockDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB61031263F4EB400F30F04 /* MockDataProvider.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3DB6102A263F4C9000F30F04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D4332FD263E8F08000C70AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D433304263E8F08000C70AB;
+			remoteInfo = Payoneer;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3D433305263E8F08000C70AB /* Payoneer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Payoneer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,10 +58,21 @@
 		3DB61015263ED9FC00F30F04 /* PaymentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentResponse.swift; sourceTree = "<group>"; };
 		3DB61019263EE1B600F30F04 /* PaymentMethodTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentMethodTableViewCell.xib; sourceTree = "<group>"; };
 		3DB6101C263EE4EF00F30F04 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		3DB61025263F4C9000F30F04 /* PayoneerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PayoneerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DB61027263F4C9000F30F04 /* PayoneerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayoneerTests.swift; sourceTree = "<group>"; };
+		3DB61029263F4C9000F30F04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DB61031263F4EB400F30F04 /* MockDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		3D433302263E8F08000C70AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DB61022263F4C9000F30F04 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -63,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				3D433307263E8F08000C70AB /* Payoneer */,
+				3DB61026263F4C9000F30F04 /* PayoneerTests */,
 				3D433306263E8F08000C70AB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				3D433305263E8F08000C70AB /* Payoneer.app */,
+				3DB61025263F4C9000F30F04 /* PayoneerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -164,6 +189,16 @@
 			path = DataModels;
 			sourceTree = "<group>";
 		};
+		3DB61026263F4C9000F30F04 /* PayoneerTests */ = {
+			isa = PBXGroup;
+			children = (
+				3DB61027263F4C9000F30F04 /* PayoneerTests.swift */,
+				3DB61029263F4C9000F30F04 /* Info.plist */,
+				3DB61031263F4EB400F30F04 /* MockDataProvider.swift */,
+			);
+			path = PayoneerTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -184,6 +219,24 @@
 			productReference = 3D433305263E8F08000C70AB /* Payoneer.app */;
 			productType = "com.apple.product-type.application";
 		};
+		3DB61024263F4C9000F30F04 /* PayoneerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DB6102C263F4C9000F30F04 /* Build configuration list for PBXNativeTarget "PayoneerTests" */;
+			buildPhases = (
+				3DB61021263F4C9000F30F04 /* Sources */,
+				3DB61022263F4C9000F30F04 /* Frameworks */,
+				3DB61023263F4C9000F30F04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3DB6102B263F4C9000F30F04 /* PBXTargetDependency */,
+			);
+			name = PayoneerTests;
+			productName = PayoneerTests;
+			productReference = 3DB61025263F4C9000F30F04 /* PayoneerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -195,6 +248,10 @@
 				TargetAttributes = {
 					3D433304263E8F08000C70AB = {
 						CreatedOnToolsVersion = 12.2;
+					};
+					3DB61024263F4C9000F30F04 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 3D433304263E8F08000C70AB;
 					};
 				};
 			};
@@ -212,6 +269,7 @@
 			projectRoot = "";
 			targets = (
 				3D433304263E8F08000C70AB /* Payoneer */,
+				3DB61024263F4C9000F30F04 /* PayoneerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -225,6 +283,13 @@
 				3DB6101A263EE1B600F30F04 /* PaymentMethodTableViewCell.xib in Resources */,
 				3D433312263E8F09000C70AB /* Assets.xcassets in Resources */,
 				3D433310263E8F08000C70AB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DB61023263F4C9000F30F04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,7 +316,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3DB61021263F4C9000F30F04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DB61032263F4EB400F30F04 /* MockDataProvider.swift in Sources */,
+				3DB61028263F4C9000F30F04 /* PayoneerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3DB6102B263F4C9000F30F04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D433304263E8F08000C70AB /* Payoneer */;
+			targetProxy = 3DB6102A263F4C9000F30F04 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3D43330E263E8F08000C70AB /* Main.storyboard */ = {
@@ -425,6 +507,44 @@
 			};
 			name = Release;
 		};
+		3DB6102D263F4C9000F30F04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PayoneerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fatihmaytalman.PayoneerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Payoneer.app/Payoneer";
+			};
+			name = Debug;
+		};
+		3DB6102E263F4C9000F30F04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PayoneerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fatihmaytalman.PayoneerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Payoneer.app/Payoneer";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -442,6 +562,15 @@
 			buildConfigurations = (
 				3D43331A263E8F09000C70AB /* Debug */,
 				3D43331B263E8F09000C70AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DB6102C263F4C9000F30F04 /* Build configuration list for PBXNativeTarget "PayoneerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DB6102D263F4C9000F30F04 /* Debug */,
+				3DB6102E263F4C9000F30F04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

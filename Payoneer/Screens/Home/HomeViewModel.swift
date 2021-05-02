@@ -7,7 +7,12 @@
 
 import Foundation
 
-final class HomeViewModel {
+protocol HomeDataController {
+
+    func fetchPaymentData(completion: @escaping (Result<[PaymentMethod], APIServiceError>) -> (Void))
+}
+
+final class DefaultHomeDataController: HomeDataController {
 
     func fetchPaymentData(completion: @escaping (Result<[PaymentMethod], APIServiceError>) -> (Void)) {
         let request = PaymentRequest()
@@ -20,6 +25,21 @@ final class HomeViewModel {
             case .failure(let error):
                 completion(.failure(error))
             }
+        }
+    }
+}
+
+final class HomeViewModel {
+
+    private let dataController:  HomeDataController
+
+    init(dataController: HomeDataController = DefaultHomeDataController()) {
+        self.dataController = dataController
+    }
+
+    func fetchPaymentData(completion: @escaping (Result<[PaymentMethod], APIServiceError>) -> (Void)) {
+        dataController.fetchPaymentData { (result) -> (Void) in
+            completion(result)
         }
     }
 }
