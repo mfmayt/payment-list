@@ -31,6 +31,8 @@ private extension HomeViewController {
                            forCellReuseIdentifier: PaymentMethodTableViewCell.reuseIdentifier)
         tableView.dataSource = self
         tableView.separatorStyle = .none
+        tableView.layer.borderWidth = 2.0
+        tableView.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.2).cgColor
     }
 
     func fetchData() {
@@ -62,10 +64,6 @@ extension HomeViewController: UITableViewDataSource {
             for: indexPath) as! PaymentMethodTableViewCell
         cell.populateCell(with: paymentMethodList[indexPath.row])
         return cell
-    }
-
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Payment Methods"
     }
 }
 
