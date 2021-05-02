@@ -35,16 +35,15 @@ private extension HomeViewController {
 
     func fetchData() {
         viewModel.fetchPaymentData { (result) -> (Void) in
-            switch result {
-            case .success(let paymentMethodList):
-                self.paymentMethodList = paymentMethodList
-                DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let paymentMethodList):
+                    self.paymentMethodList = paymentMethodList
                     self.tableView.reloadData()
+                case .failure(let error):
+                    self.showError(error)
                 }
-            case .failure(let error):
-                self.showError(error)
             }
-
         }
     }
 }
@@ -71,7 +70,16 @@ extension HomeViewController: UITableViewDataSource {
 
 private extension HomeViewController {
 
-    func showError(_ error: Error) {
-
+    func showError(_ error: APIServiceError) {
+        // TODO: we can move these texts to localization files
+        let alert = UIAlertController(title: "Try again",
+                                      message: "\(error)",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Retry",
+                                      style: .default,
+                                      handler: { (action) in
+                                        self.fetchData()
+                                      }))
+        present(alert, animated: true, completion: nil)
     }
 }

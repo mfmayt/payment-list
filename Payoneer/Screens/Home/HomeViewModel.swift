@@ -9,7 +9,7 @@ import Foundation
 
 final class HomeViewModel {
 
-    func fetchPaymentData(completion: @escaping (Result<[PaymentMethod], Error>) -> (Void)) {
+    func fetchPaymentData(completion: @escaping (Result<[PaymentMethod], APIServiceError>) -> (Void)) {
         let request = PaymentRequest()
 
         NetworkManager.shared.handleRequest(request,

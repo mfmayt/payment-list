@@ -7,13 +7,25 @@
 
 import Foundation
 
-class NetworkManager {
+public enum APIServiceError: Error {
+    // TODO: we can increase number of error cases
+    case noData
+    case decodeError
+    case serverError
 
-    public enum APIServiceError: Error {
-
-        case noData
-        case decodeError
+    var localizedError: String {
+        switch self {
+        case .decodeError:
+            return "an error occuring while decoding data"
+        case .noData:
+            return "there is no data to shown"
+        case .serverError:
+            return "an error occured on server side"
+        }
     }
+}
+
+class NetworkManager {
 
     private enum Constant {
 
@@ -41,7 +53,7 @@ class NetworkManager {
 
     func handleRequest<T: Decodable>(_ request: BaseRequest,
                                      model: T.Type,
-                                     completion: @escaping (Result<T, Error>) -> (Void)) {
+                                     completion: @escaping (Result<T, APIServiceError>) -> (Void)) {
 
         switch request.method {
         case .GET:
@@ -55,10 +67,10 @@ class NetworkManager {
 
     func processResponse<T: Decodable>(data: Data?,
                                        error: Error?,
-                                       completion: @escaping (Result<T, Error>) -> (Void)) {
-        if let err = error {
-            return completion(.failure(err))
-        }
+                                       completion: @escaping (Result<T, APIServiceError>) -> (Void)) {
+
+        guard error == nil else { return completion(.failure(APIServiceError.serverError)) }
+
         if let data = data {
             do{
                 let decodedData = try JSONDecoder().decode(T.self, from: data)

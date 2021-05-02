@@ -10,7 +10,7 @@ import Foundation
 struct PaymentRequest: BaseRequest {
 
     private enum Constant {
-        static let endpoint = "optile/checkout-android/develop/shared-test/lists/listresult.json"
+        static let endpoint = "optiloooo/checkout-android/develop/shared-test/lists/listresult.json"
     }
 
     let endpoint: String = Constant.endpoint
