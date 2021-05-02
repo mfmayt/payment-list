@@ -9,16 +9,16 @@ import Foundation
 
 final class HomeViewModel {
 
-    func fetchPaymentData() {
+    func fetchPaymentData(completion: @escaping (Result<[PaymentMethod], Error>) -> (Void)) {
         let request = PaymentRequest()
 
         NetworkManager.shared.handleRequest(request,
                                             model: PaymentResponse.self) { (result) -> (Void) in
             switch result {
             case .success(let response):
-                print(response.networks.applicable.count)
+                completion(.success(response.networks.applicable))
             case .failure(let error):
-                print(error.localizedDescription)
+                completion(.failure(error))
             }
         }
     }

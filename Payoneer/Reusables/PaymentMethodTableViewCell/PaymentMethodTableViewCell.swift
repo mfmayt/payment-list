@@ -12,7 +12,6 @@ final class PaymentMethodTableViewCell: UITableViewCell {
     private enum Constant {
 
         static let titleFontSize: CGFloat = 15.0
-        static let urlFontSize: CGFloat = 11.0
     }
 
     @IBOutlet private weak var paymentLogoImageView: UIImageView!
@@ -49,7 +48,7 @@ private extension PaymentMethodTableViewCell {
 
 extension PaymentMethodTableViewCell {
 
-    func populateCell() {
-        // TODO: will be populated via presentation data
+    func populateCell(with paymentData: PaymentMethod) {
+        titleLabel.text = paymentData.label
     }
 }

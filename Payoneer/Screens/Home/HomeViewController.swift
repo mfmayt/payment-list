@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
 
     private let viewModel = HomeViewModel()
+    private var paymentMethodList: [PaymentMethod] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,18 @@ private extension HomeViewController {
     }
 
     func fetchData() {
-        viewModel.fetchPaymentData()
+        viewModel.fetchPaymentData { (result) -> (Void) in
+            switch result {
+            case .success(let paymentMethodList):
+                self.paymentMethodList = paymentMethodList
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            case .failure(let error):
+                self.showError(error)
+            }
+
+        }
     }
 }
 
@@ -41,16 +53,24 @@ private extension HomeViewController {
 extension HomeViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // TODO: will be updated
-        return 0
+        return paymentMethodList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: PaymentMethodTableViewCell.reuseIdentifier,
             for: indexPath) as! PaymentMethodTableViewCell
-        // TODO: populate cell with data
+        cell.populateCell(with: paymentMethodList[indexPath.row])
         return cell
     }
 }
 
+
+// MARK: Private Helpers
+
+private extension HomeViewController {
+
+    func showError(_ error: Error) {
+
+    }
+}
