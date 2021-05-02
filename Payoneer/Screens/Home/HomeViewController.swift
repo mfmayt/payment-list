@@ -30,6 +30,7 @@ private extension HomeViewController {
         tableView.register(UINib(nibName: "PaymentMethodTableViewCell", bundle: nil),
                            forCellReuseIdentifier: PaymentMethodTableViewCell.reuseIdentifier)
         tableView.dataSource = self
+        tableView.separatorStyle = .none
     }
 
     func fetchData() {

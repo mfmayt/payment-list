@@ -23,6 +23,7 @@
 		3DB61011263ED86900F30F04 /* MethodLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB61010263ED86900F30F04 /* MethodLink.swift */; };
 		3DB61016263ED9FC00F30F04 /* PaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB61015263ED9FC00F30F04 /* PaymentResponse.swift */; };
 		3DB6101A263EE1B600F30F04 /* PaymentMethodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DB61019263EE1B600F30F04 /* PaymentMethodTableViewCell.xib */; };
+		3DB6101D263EE4EF00F30F04 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6101C263EE4EF00F30F04 /* UIImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		3DB61010263ED86900F30F04 /* MethodLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodLink.swift; sourceTree = "<group>"; };
 		3DB61015263ED9FC00F30F04 /* PaymentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentResponse.swift; sourceTree = "<group>"; };
 		3DB61019263EE1B600F30F04 /* PaymentMethodTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentMethodTableViewCell.xib; sourceTree = "<group>"; };
+		3DB6101C263EE4EF00F30F04 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +82,8 @@
 				3D43330A263E8F08000C70AB /* SceneDelegate.swift */,
 				3DB60FF6263ED35A00F30F04 /* Extensions */,
 				3DB6100C263ED7D900F30F04 /* DataModels */,
-				3DB60FEF263ED2D300F30F04 /* Reusables */,
 				3DB60FE8263ED0E700F30F04 /* Network */,
+				3DB60FEF263ED2D300F30F04 /* Reusables */,
 				3DB60FFC263ED48D00F30F04 /* Screens */,
 				3D43330E263E8F08000C70AB /* Main.storyboard */,
 				3D433311263E8F09000C70AB /* Assets.xcassets */,
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				3DB60FF7263ED36500F30F04 /* UITableViewCell.swift */,
+				3DB6101C263EE4EF00F30F04 /* UIImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				3DB61016263ED9FC00F30F04 /* PaymentResponse.swift in Sources */,
 				3DB60FEC263ED13F00F30F04 /* BaseRequest.swift in Sources */,
 				3DB60FE6263ED0E200F30F04 /* NetworkManager.swift in Sources */,
+				3DB6101D263EE4EF00F30F04 /* UIImageView.swift in Sources */,
 				3DB61009263ED62300F30F04 /* PaymentRequest.swift in Sources */,
 				3DB61001263ED56E00F30F04 /* HomeViewModel.swift in Sources */,
 				3D43330D263E8F08000C70AB /* HomeViewController.swift in Sources */,

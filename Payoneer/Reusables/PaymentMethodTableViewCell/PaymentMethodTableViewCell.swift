@@ -37,7 +37,7 @@ private extension PaymentMethodTableViewCell {
 
     func applyStyling() {
         selectionStyle = .none
-        paymentLogoImageView.contentMode = .scaleAspectFill
+        paymentLogoImageView.contentMode = .scaleAspectFit
 
         titleLabel.numberOfLines = 0
         titleLabel.font = UIFont.systemFont(ofSize: Constant.titleFontSize, weight: .semibold)
@@ -50,5 +50,6 @@ extension PaymentMethodTableViewCell {
 
     func populateCell(with paymentData: PaymentMethod) {
         titleLabel.text = paymentData.label
+        paymentLogoImageView.setImage(from: paymentData.links.logo)
     }
 }
