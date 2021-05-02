@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3D433309263E8F08000C70AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D433308263E8F08000C70AB /* AppDelegate.swift */; };
 		3D43330B263E8F08000C70AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D43330A263E8F08000C70AB /* SceneDelegate.swift */; };
-		3D43330D263E8F08000C70AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D43330C263E8F08000C70AB /* ViewController.swift */; };
+		3D43330D263E8F08000C70AB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D43330C263E8F08000C70AB /* HomeViewController.swift */; };
 		3D433310263E8F08000C70AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D43330E263E8F08000C70AB /* Main.storyboard */; };
 		3D433312263E8F09000C70AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D433311263E8F09000C70AB /* Assets.xcassets */; };
 		3D433315263E8F09000C70AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D433313263E8F09000C70AB /* LaunchScreen.storyboard */; };
@@ -24,7 +24,7 @@
 		3D433305263E8F08000C70AB /* Payoneer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Payoneer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D433308263E8F08000C70AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D43330A263E8F08000C70AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3D43330C263E8F08000C70AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3D43330C263E8F08000C70AB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3D43330F263E8F08000C70AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D433311263E8F09000C70AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D433314263E8F09000C70AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 				3DB60FEF263ED2D300F30F04 /* Reusables */,
 				3D433308263E8F08000C70AB /* AppDelegate.swift */,
 				3D43330A263E8F08000C70AB /* SceneDelegate.swift */,
-				3D43330C263E8F08000C70AB /* ViewController.swift */,
+				3DB60FFC263ED48D00F30F04 /* Screens */,
 				3D43330E263E8F08000C70AB /* Main.storyboard */,
 				3D433311263E8F09000C70AB /* Assets.xcassets */,
 				3D433313263E8F09000C70AB /* LaunchScreen.storyboard */,
@@ -112,6 +112,22 @@
 				3DB60FF7263ED36500F30F04 /* UITableViewCell.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3DB60FFC263ED48D00F30F04 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				3DB60FFE263ED49800F30F04 /* Home */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		3DB60FFE263ED49800F30F04 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3D43330C263E8F08000C70AB /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,7 +204,7 @@
 				3DB60FF4263ED2F900F30F04 /* PaymentMethodTableViewCell.swift in Sources */,
 				3DB60FEC263ED13F00F30F04 /* BaseRequest.swift in Sources */,
 				3DB60FE6263ED0E200F30F04 /* NetworkManager.swift in Sources */,
-				3D43330D263E8F08000C70AB /* ViewController.swift in Sources */,
+				3D43330D263E8F08000C70AB /* HomeViewController.swift in Sources */,
 				3D433309263E8F08000C70AB /* AppDelegate.swift in Sources */,
 				3DB60FF8263ED36500F30F04 /* UITableViewCell.swift in Sources */,
 				3D43330B263E8F08000C70AB /* SceneDelegate.swift in Sources */,
