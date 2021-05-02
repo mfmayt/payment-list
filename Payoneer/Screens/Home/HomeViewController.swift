@@ -63,6 +63,10 @@ extension HomeViewController: UITableViewDataSource {
         cell.populateCell(with: paymentMethodList[indexPath.row])
         return cell
     }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Payment Methods"
+    }
 }
 
 
@@ -73,7 +77,7 @@ private extension HomeViewController {
     func showError(_ error: APIServiceError) {
         // TODO: we can move these texts to localization files
         let alert = UIAlertController(title: "Try again",
-                                      message: "\(error)",
+                                      message: "\(error.localizedError)",
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Retry",
                                       style: .default,

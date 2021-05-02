@@ -26,7 +26,7 @@ final class PaymentMethodTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
 
-        titleLabel.text = ""
+        titleLabel.text = nil
         paymentLogoImageView.image = nil
     }
 }
