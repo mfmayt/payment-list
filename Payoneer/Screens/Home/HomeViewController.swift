@@ -7,6 +7,12 @@
 
 import UIKit
 
+private enum Constant {
+
+    static let startPoint = CGPoint(x: 0.8, y: 1.0)
+    static let endPoint = CGPoint(x: 0.2, y: 0.0)
+}
+
 class HomeViewController: UIViewController {
 
     @IBOutlet private weak var tableView: UITableView!
@@ -18,11 +24,24 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         configureTableView()
+        applyStyling()
         fetchData()
+    }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        if #available(iOS 13.0, *) {
+            guard previousTraitCollection?
+                    .hasDifferentColorAppearance(comparedTo: traitCollection) ?? false else {
+                return
+            }
+            setGradient()
+        }
     }
 }
 
-// MARK: Configurations
+// MARK: Private Helpers
 
 private extension HomeViewController {
 
@@ -31,8 +50,23 @@ private extension HomeViewController {
                            forCellReuseIdentifier: PaymentMethodTableViewCell.reuseIdentifier)
         tableView.dataSource = self
         tableView.separatorStyle = .none
-        tableView.layer.borderWidth = 2.0
-        tableView.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.2).cgColor
+        tableView.showsVerticalScrollIndicator = false
+    }
+
+    func applyStyling() {
+        tableView.backgroundColor = .clear
+        setGradient()
+    }
+
+    func setGradient() {
+        view.layer.sublayers = view.layer.sublayers?.filter { theLayer in
+            !theLayer.isKind(of: CAGradientLayer.classForCoder())
+        }
+        let beginColor = Style.getColor(lightVersion: .skyBlue, darkVersion: .darkBlue)
+        let endColor = Style.getColor(lightVersion: .lightBlue, darkVersion: .nightBlue)
+        view.applyGradient(colors: [beginColor, endColor],
+                           startPoint: Constant.startPoint,
+                           endPoint: Constant.endPoint)
     }
 
     func fetchData() {

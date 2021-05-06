@@ -33,17 +33,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EV2-Be-sOm">
-                                <rect key="frame" x="20" y="160" width="374" height="712"/>
+                                <rect key="frame" x="12" y="140" width="390" height="732"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="EV2-Be-sOm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="NN3-RM-uhz"/>
-                            <constraint firstItem="EV2-Be-sOm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="aF3-qS-Gcm"/>
+                            <constraint firstItem="EV2-Be-sOm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="NN3-RM-uhz"/>
+                            <constraint firstItem="EV2-Be-sOm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aF3-qS-Gcm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EV2-Be-sOm" secondAttribute="bottom" constant="-10" id="h6G-Iq-2br"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EV2-Be-sOm" secondAttribute="trailing" constant="20" id="zhd-I2-0SJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EV2-Be-sOm" secondAttribute="trailing" constant="12" id="zhd-I2-0SJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Payment Methods" id="a8N-c3-yJK"/>

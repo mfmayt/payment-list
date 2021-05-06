@@ -26,6 +26,9 @@
 		3DB6101D263EE4EF00F30F04 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6101C263EE4EF00F30F04 /* UIImageView.swift */; };
 		3DB61028263F4C9000F30F04 /* PayoneerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB61027263F4C9000F30F04 /* PayoneerTests.swift */; };
 		3DB61032263F4EB400F30F04 /* MockDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB61031263F4EB400F30F04 /* MockDataProvider.swift */; };
+		3DB61040264468DE00F30F04 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6103F264468DE00F30F04 /* Style.swift */; };
+		3DB610442644698D00F30F04 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB610432644698D00F30F04 /* UIView.swift */; };
+		3DB6104826446B0300F30F04 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6104726446B0300F30F04 /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,9 @@
 		3DB61027263F4C9000F30F04 /* PayoneerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayoneerTests.swift; sourceTree = "<group>"; };
 		3DB61029263F4C9000F30F04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DB61031263F4EB400F30F04 /* MockDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataProvider.swift; sourceTree = "<group>"; };
+		3DB6103F264468DE00F30F04 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		3DB610432644698D00F30F04 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		3DB6104726446B0300F30F04 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,7 @@
 		3D433307263E8F08000C70AB /* Payoneer */ = {
 			isa = PBXGroup;
 			children = (
+				3DB6103E264468CE00F30F04 /* Styling */,
 				3D433308263E8F08000C70AB /* AppDelegate.swift */,
 				3D43330A263E8F08000C70AB /* SceneDelegate.swift */,
 				3DB60FF6263ED35A00F30F04 /* Extensions */,
@@ -149,6 +156,8 @@
 			children = (
 				3DB60FF7263ED36500F30F04 /* UITableViewCell.swift */,
 				3DB6101C263EE4EF00F30F04 /* UIImageView.swift */,
+				3DB610432644698D00F30F04 /* UIView.swift */,
+				3DB6104726446B0300F30F04 /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -197,6 +206,14 @@
 				3DB61031263F4EB400F30F04 /* MockDataProvider.swift */,
 			);
 			path = PayoneerTests;
+			sourceTree = "<group>";
+		};
+		3DB6103E264468CE00F30F04 /* Styling */ = {
+			isa = PBXGroup;
+			children = (
+				3DB6103F264468DE00F30F04 /* Style.swift */,
+			);
+			path = Styling;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,10 +322,13 @@
 				3DB60FEC263ED13F00F30F04 /* BaseRequest.swift in Sources */,
 				3DB60FE6263ED0E200F30F04 /* NetworkManager.swift in Sources */,
 				3DB6101D263EE4EF00F30F04 /* UIImageView.swift in Sources */,
+				3DB6104826446B0300F30F04 /* UIColor.swift in Sources */,
+				3DB61040264468DE00F30F04 /* Style.swift in Sources */,
 				3DB61009263ED62300F30F04 /* PaymentRequest.swift in Sources */,
 				3DB61001263ED56E00F30F04 /* HomeViewModel.swift in Sources */,
 				3D43330D263E8F08000C70AB /* HomeViewController.swift in Sources */,
 				3D433309263E8F08000C70AB /* AppDelegate.swift in Sources */,
+				3DB610442644698D00F30F04 /* UIView.swift in Sources */,
 				3DB61011263ED86900F30F04 /* MethodLink.swift in Sources */,
 				3DB60FF8263ED36500F30F04 /* UITableViewCell.swift in Sources */,
 				3D43330B263E8F08000C70AB /* SceneDelegate.swift in Sources */,
