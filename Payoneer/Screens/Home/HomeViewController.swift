@@ -96,7 +96,11 @@ extension HomeViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: PaymentMethodTableViewCell.reuseIdentifier,
             for: indexPath) as! PaymentMethodTableViewCell
-        cell.populateCell(with: paymentMethodList[indexPath.row])
+        let token = cell.paymentLogoImageView.setImage(from: paymentMethodList[indexPath.row].links.logo)
+        cell.populateCell(with: paymentMethodList[indexPath.row].label)
+        cell.onReuse = {
+            MediaManager.shared.cancel(for: token )
+        }
         return cell
     }
 }
@@ -107,7 +111,6 @@ extension HomeViewController: UITableViewDataSource {
 private extension HomeViewController {
 
     func showError(_ error: APIServiceError) {
-        // TODO: we can move these texts to localization files
         let alert = UIAlertController(title: "Try again",
                                       message: "\(error.localizedError)",
                                       preferredStyle: .alert)

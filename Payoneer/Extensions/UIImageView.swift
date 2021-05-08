@@ -9,20 +9,23 @@ import UIKit
 
 extension UIImageView {
 
-    // We can store the data tasks and cancel not needed ones when scrolling fast/big size images
     @discardableResult
-    func setImage(from url: String) -> URLSessionDataTask? {
+    func setImage(from url: String) -> UUID? {
         guard let url = URL(string: url) else { return nil }
 
-        let dataTask = URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, error == nil,
-                  let image = UIImage(data: data) else { return }
+        let uuid = UUID()
+        backgroundColor = UIColor.white.withAlphaComponent(0.1)
+        MediaManager.shared.load(url, uuid: uuid) { (result) -> (Void) in
             DispatchQueue.main.async() { [weak self] in
-                self?.image = image
+                switch result {
+                    case .failure(_):
+                        self?.image = nil
+                    case .success(let image):
+                        self?.image = image
+                }
             }
         }
-
-        dataTask.resume()
-        return dataTask
+        backgroundColor = .clear
+        return uuid
     }
 }

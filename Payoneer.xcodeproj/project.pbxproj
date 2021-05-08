@@ -29,6 +29,7 @@
 		3DB61040264468DE00F30F04 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6103F264468DE00F30F04 /* Style.swift */; };
 		3DB610442644698D00F30F04 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB610432644698D00F30F04 /* UIView.swift */; };
 		3DB6104826446B0300F30F04 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6104726446B0300F30F04 /* UIColor.swift */; };
+		3DB6104C2646A09600F30F04 /* MediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6104B2646A09600F30F04 /* MediaManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		3DB6103F264468DE00F30F04 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		3DB610432644698D00F30F04 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		3DB6104726446B0300F30F04 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		3DB6104B2646A09600F30F04 /* MediaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,8 +130,9 @@
 		3DB60FE8263ED0E700F30F04 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				3DB60FE5263ED0E200F30F04 /* NetworkManager.swift */,
 				3DB60FEB263ED13F00F30F04 /* BaseRequest.swift */,
+				3DB6104B2646A09600F30F04 /* MediaManager.swift */,
+				3DB60FE5263ED0E200F30F04 /* NetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				3DB60FF8263ED36500F30F04 /* UITableViewCell.swift in Sources */,
 				3D43330B263E8F08000C70AB /* SceneDelegate.swift in Sources */,
 				3DB6100E263ED7F200F30F04 /* PaymentMethod.swift in Sources */,
+				3DB6104C2646A09600F30F04 /* MediaManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

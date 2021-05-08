@@ -17,9 +17,11 @@ final class PaymentMethodTableViewCell: UITableViewCell {
         static let backgroundOpacity: CGFloat = 0.7
     }
 
-    @IBOutlet private weak var paymentLogoImageView: UIImageView!
+    @IBOutlet weak var paymentLogoImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var contentHolderView: UIView!
+
+    var onReuse: () -> Void = {}
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,6 +34,7 @@ final class PaymentMethodTableViewCell: UITableViewCell {
 
         titleLabel.text = nil
         paymentLogoImageView.image = nil
+        onReuse()
     }
 }
 
@@ -41,8 +44,9 @@ private extension PaymentMethodTableViewCell {
 
     func applyStyling() {
         selectionStyle = .none
-        paymentLogoImageView.contentMode = .scaleAspectFit
         backgroundColor = .clear
+
+        paymentLogoImageView.contentMode = .scaleAspectFit
 
         titleLabel.numberOfLines = 0
         titleLabel.font = UIFont.systemFont(ofSize: Constant.titleFontSize, weight: .semibold)
@@ -61,8 +65,7 @@ private extension PaymentMethodTableViewCell {
 
 extension PaymentMethodTableViewCell {
 
-    func populateCell(with paymentData: PaymentMethod) {
-        titleLabel.text = paymentData.label
-        paymentLogoImageView.setImage(from: paymentData.links.logo)
+    func populateCell(with label: String) {
+        titleLabel.text = label
     }
 }

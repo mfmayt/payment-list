@@ -8,10 +8,11 @@
 import Foundation
 
 public enum APIServiceError: Error {
-    // TODO: we can increase number of error cases
+
     case noData
     case decodeError
-    case serverError
+    case serverError(Int)
+    case transportError
 
     var localizedError: String {
         switch self {
@@ -19,8 +20,10 @@ public enum APIServiceError: Error {
             return "an error occuring while decoding data"
         case .noData:
             return "there is no data to shown"
-        case .serverError:
-            return "an error occured on server side"
+        case .serverError(let errorCode):
+            return "an error occured on server side with code: \(errorCode)"
+        case .transportError:
+            return "transport error"
         }
     }
 }
@@ -41,11 +44,15 @@ class NetworkManager {
     }
 
 
-    func GET(request: BaseRequest, completion: @escaping (Data?, Error?) -> (Void)) {
+    func GET(request: BaseRequest, completion: @escaping (Data?, APIServiceError?) -> (Void)) {
         let session = URLSession.shared
 
         let task = session.dataTask(with: request.urlRequest) { (data, urlResponse, error) in
-            return completion(data, error)
+            if let httpResponse = urlResponse as? HTTPURLResponse,
+               !(200...299).contains(httpResponse.statusCode) {
+                return completion(data, .serverError(httpResponse.statusCode))
+            }
+            return completion(data, error == nil ? nil : .transportError)
         }
 
         task.resume()
@@ -66,10 +73,12 @@ class NetworkManager {
     }
 
     func processResponse<T: Decodable>(data: Data?,
-                                       error: Error?,
+                                       error: APIServiceError?,
                                        completion: @escaping (Result<T, APIServiceError>) -> (Void)) {
 
-        guard error == nil else { return completion(.failure(APIServiceError.serverError)) }
+        if let error = error {
+            return completion(.failure(error))
+        }
 
         if let data = data {
             do{
